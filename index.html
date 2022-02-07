@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="./src/main.scss" />
+  </head>
+  <body>
+    <main>
+      <img class="logo" src="./images/logo.svg" height="118" width="151" alt="splitter" />
+      <div class="card">
+        <div class="card-left">
+          <div class="card-input">
+            <label class="card-label" for="bill">Bill</label>
+            <div class="card__input">
+              <img
+                src="./images/icon-dollar.svg"
+                width="11"
+                height="17"
+                alt="dollar"
+              /><input type="number" name="bill" id="bill" value="0" />
+            </div>
+          </div>
+          <div class="card-input">
+            <label for="tipc" class="card-label">Select Tip %</label>
+            <div class="card-tip">
+              <button id="tip5" class="card__tip">5%</button>
+              <button id="tip10" class="card__tip">10%</button>
+              <button id="tip15" class="card__tip active">15%</button>
+              <button id="tip25" class="card__tip">25%</button>
+              <button id="tip50" class="card__tip">50%</button>
+              <input
+                id="tipc"
+                name="tipc"
+                type="number"
+                class="card__tip-custom"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+          <div id="input__nbpeople" class="card-input">
+            <label for="nbpeople" class="card-label">Number of People</label>
+            <div class="card__input">
+              <img
+                src="./images/icon-person.svg"
+                width="13"
+                height="16"
+                alt="person"
+              /><input type="number" name="nbpeople" id="nbpeople" value="1" min="1"/>
+            </div>
+          </div>
+        </div>
+        <div class="card-right">
+          <div class="card-result-top">
+            <div class="card-result-tip">
+              <div class="card-result-about">
+                <div class="card-result-title">Tip Amount</div>
+                <div class="card-result-per">/ person</div>
+              </div>
+              <div id="tip" class="card-result-value">$0.00</div>
+            </div>
+            <div class="card-result-tip">
+              <div class="card-result-about">
+                <div class="card-result-title">Total</div>
+                <div class="card-result-per">/ person</div>
+              </div>
+              <div id="total" class="card-result-value">$0.00</div>
+            </div>
+          </div>
+          <button id="reset" class="card-reset">Reset</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://ali.js.org/">Ali Bouhrouche</a>.
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

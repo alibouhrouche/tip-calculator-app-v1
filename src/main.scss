@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+* {box-sizing: border-box;}
+$strong-cyan: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$very-dark-cyan1: hsl(183, 100%, 8%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$dark-grayish-cyan1: hsl(187, 45%, 80%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$light-grayish-cyan1: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: $light-grayish-cyan;
+    font-family: 'Space Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    padding: 2rem;
+}
+
+.card {
+    background: $white;
+    border-radius: 15px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2,300px);
+    gap: 1rem;
+    @media screen and (max-width: 760px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-input {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.card-label {
+    color: $dark-grayish-cyan;
+    padding: .5rem .2rem;
+}
+
+.card__input {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    background: $light-grayish-cyan1;
+    border: none;
+    color: $dark-grayish-cyan;
+    font-size: 1.2rem;
+    img {
+        margin: .5rem;
+        z-index: 1;
+    }
+    input {
+        margin-left: calc(-1rem - 20px);
+        background: $light-grayish-cyan1;
+        border: none;
+        text-align: right;
+        width: 100%;
+        font-size: 24px;
+        font-weight: 800;
+        font-family: "Space Mono", monospace;
+        color: #00494d;
+        padding-right: 10px;
+        border-radius: 5px;
+        &:focus {
+            outline: 2px solid $strong-cyan;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.card-tip {
+    display: grid;
+    grid-template-columns: repeat(3,5.5rem);
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    font-size: 24px;
+    justify-content: center;
+}
+
+.card__tip {
+    font-size: 15px;
+    font-family: 'Space Mono', monospace;
+    padding: .5rem 1rem;
+    font-weight: 700;
+    background: $very-dark-cyan;
+    border: none;
+    color: $white;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+        background: $light-grayish-cyan;
+        color: $very-dark-cyan1;
+    }
+    &.active {
+        background: $strong-cyan;
+        color: $very-dark-cyan1;
+    }
+}
+
+.card__tip-custom {
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    background: $light-grayish-cyan1;
+    color: $very-dark-cyan;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    text-align: right;
+    &.active {
+        outline: 2px solid $dark-grayish-cyan;
+    }
+    &:focus {
+        outline: 2px solid $strong-cyan;
+    }
+}
+
+#input__nbpeople {
+    &.invalid {
+        .card-label::after {
+            content: "Can't be zero";
+            text-align: right;
+            display: inline-flex;
+            width: 50%;
+            justify-content: flex-end;
+            color: red;
+        }
+        input {
+            outline: 2px solid red;
+        }
+    }
+}
+
+.card-right {
+    background: $very-dark-cyan;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 2rem;
+    color: $white;
+    justify-content: space-between;
+}
+
+.card-result-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-result-tip {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-result-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.card-result-per {
+    font-size: 10px;
+    color: $dark-grayish-cyan1;
+    font-weight: 700;
+}
+
+.card-result-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: $strong-cyan;
+}
+
+.card-reset {
+    cursor: pointer;
+    background: $strong-cyan;
+    border: none;
+    padding: .5rem;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $very-dark-cyan1;
+    font-family: 'Space Mono', monospace;
+    &:hover {
+        background: $light-grayish-cyan;
+    }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
